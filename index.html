@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+             body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            text-align: center;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            height: 500px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .gallery-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .gallery-item:hover .gallery-text {
+            opacity: 1;
+        }
+
+        .gallery-text h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .gallery-text p {
+            margin: 5px 0 0;
+            font-size: 1em;
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 3em;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #ff6f61, #d5aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            height: 5px;
+            background: #333;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Himanshu PCF Gallery</h1><br>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="StarRatingThumbnail.jpg" alt="Gallery Image 1">
+            <div class="gallery-text">
+                <h3>Rating</h3>
+                <p>Description for image 1.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="progressbarimage.jpg" alt="Gallery Image 2">
+            <div class="gallery-text">
+                <h3>Progress Bar</h3>
+                <p>Description for image 2.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="toggleswitch.jpg" alt="Gallery Image 3">
+            <div class="gallery-text">
+                <h3>CheckBox & Toggle</h3>
+                <p>Description for image 3.</p>
+            </div>
+        </div>
+        <!-- Add more gallery items as needed -->
+        <div class="gallery-item">
+            <img src="toggleswitch.jpg" alt="Gallery Image 3">
+            <div class="gallery-text">
+                <h3>Title 3</h3>
+                <p>Description for image 3.</p>
+            </div>
+        </div>
+<!-- Add more gallery items as needed -->
+    </div>
+</body>
+</html>
